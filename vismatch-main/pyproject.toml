@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools >= 61.0", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vismatch"
+readme = "README.md"
+description = "Easily test and apply pairwise image matching models"
+authors = [
+  {name = "Alex Stoken", email = "alex.stoken@gmail.com"},
+  {name = "Gabriele Berton", email = "berton.gabri@gmail.com"},
+  {name = "Gabriele Trivigno", email = "gabriele.trivigno@polito.it"},
+]
+maintainers = [
+  {name = "Alex Stoken", email = "alex.stoken@gmail.com"},
+  {name = "Gabriele Berton", email = "berton.gabri@gmail.com"},
+]
+requires-python = ">= 3.10"
+license = {file = "LICENSE"}
+keywords = ["image matching"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+]
+dynamic = ["version", "dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/gmberton/vismatch"
+Repository = "https://github.com/gmberton/vismatch"
+HuggingFace = "https://huggingface.co/vismatch"
+
+
+[project.optional-dependencies]
+omniglue = ["tensorflow"]
+sphereglue = ["torch-geometric", "torch-cluster"]
+zippypoint = ["tensorflow>=2.15,<2.16", "keras<3", "larq>=0.12.2"]
+all = ["vismatch[omniglue, sphereglue, zippypoint]"]
+docs = [
+    "sphinx>=7.0",
+    "sphinx-rtd-theme",
+    "myst-parser",
+]
+
+[tool.setuptools.dynamic]
+# version = {attr = "vismatch.__version__"}
+dependencies = {file = "requirements.txt"}
+
+[tool.setuptools_scm]
+version_file = "vismatch/_version.py"
+
+[tool.setuptools.packages]
+find = {}
+
+[tool.ruff]
+line-length = 120
+exclude = ["vismatch/third_party"]
+
+[tool.ruff.lint]
+ignore = ["E402", "E501"]
+
+[tool.uv.extra-build-dependencies]
+torch-cluster = ["torch"]
+
+[tool.setuptools]
+py-modules = ["vismatch_match", "vismatch_extract", "vismatch_test"]
+include-package-data = true
+
+[project.scripts]
+vismatch-match = "vismatch_match:main"
+vismatch-extract = "vismatch_extract:main"
+vismatch-test = "vismatch_test:main"

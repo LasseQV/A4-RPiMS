@@ -1,0 +1,14 @@
+a.reference.external[href*="github.com"] {
+  color: #2b7a0b;
+  font-size: 0.85em;
+  margin-left: 0.5em;
+}
+
+table td, table th {
+    border: 1px solid #000 !important;
+    padding: 6px 12px;
+}
+
+table {
+    border-collapse: collapse;
+}
