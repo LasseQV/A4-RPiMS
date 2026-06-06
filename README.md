@@ -15,8 +15,8 @@ Of the four selected bands for deployment, the 685nm band isolates the flowers f
 ## Repository Components
 **Feature Alignment**: `/lightGlue`
 **Edge Deployment**: `UPLOAD SOON`
-**Super-resolution**: `UPLOAD SOON`
-**Auto-labeling**: `UPLOAD SOON`
+**Super-resolution**: `/super-res`, `/Restormer`
+**Auto-labeling**: `/utils/prelabel_flowers.py`
 **Ratio Extraction**: `UPLOAD SOON`
 
 ## Parts List
