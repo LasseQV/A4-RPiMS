@@ -13,11 +13,15 @@ To allow ratios such as NDVI to be extracted at a plant and organ-level, we use 
 Of the four selected bands for deployment, the 685nm band isolates the flowers for garbanzo and cowpea data extremely well. By using this band together with OpenCV blob detection using a threshold for flower brightness relative to the darker canopy, we are able to extract traits at a high speed, though accuracy is sacrificed. Building on this, we investigate the use of a trained YOLOv26n model and benchmark its performance in a deployment setting.
 
 ## Repository Components
-**Feature Alignment**: `/lightGlue`
+**Feature Alignment**: `/lightGlue`, `/align`
+
 **Edge Deployment**: `UPLOAD SOON`
+
 **Super-resolution**: `/super-res`, `/Restormer`
+
 **Auto-labeling**: `/utils/prelabel_flowers.py`
-**Ratio Extraction**: `UPLOAD SOON`
+
+**Ratio Extraction**: `/utils/ratio_viz.py`
 
 ## Parts List
 - Raspberry Pi 5
